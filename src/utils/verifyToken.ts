@@ -1,7 +1,9 @@
 import jwt from 'jsonwebtoken'
 import { ENV } from '../conf/conf'
+import connect from '../db'
 
-export const verifyToken = (req, res, next) => {
+export const verifyToken = async (req, res, next) => {
+  await connect()
   // console.log(req)
   const token = req.cookies.token
 

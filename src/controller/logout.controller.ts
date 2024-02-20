@@ -1,5 +1,8 @@
+import connect from '../db'
+
 export const logout = async (req, res) => {
   try {
+    await connect()
     res.cookie('token', '', { maxAge: 0 })
     return res.json({
       message: 'Logout successfully',

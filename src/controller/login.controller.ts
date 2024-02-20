@@ -1,10 +1,12 @@
 import bcryptjs from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-import { User } from '../model/user.modal'
 import { ENV } from '../conf/conf'
+import connect from '../db'
+import { User } from '../model/user.modal'
 
 export const loginUser = async (req, res) => {
   try {
+    await connect()
     const { name, pass } = req.body
 
     const user = await User.findOne({ name })
@@ -28,11 +30,11 @@ export const loginUser = async (req, res) => {
       expiresIn: '1d',
     })
 
-    res.cookie('token', token) 
+    res.cookie('token', token)
     return res.json({
       message: 'Login successful',
       success: true,
-      token, 
+      token,
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })

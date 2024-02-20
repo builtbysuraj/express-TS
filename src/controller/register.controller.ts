@@ -1,9 +1,11 @@
 import jwt from 'jsonwebtoken'
 import { ENV } from '../conf/conf'
+import connect from '../db'
 import { User } from '../model/user.modal'
 
 export const registerUser = async (req, res) => {
   try {
+    await connect()
     const { name, pass } = req.body
     // console.log(name, pass)
 
