@@ -17,6 +17,6 @@
     "outDir": "dist",
     "sourceMap": true,
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "api/**/*"],
   "exclude": ["node_modules"],
 }
