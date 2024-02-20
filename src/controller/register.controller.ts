@@ -29,7 +29,11 @@ export const registerUser = async (req, res) => {
       expiresIn: '1d',
     })
 
-    res.cookie('token', token)
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+    })
     return res.json({ message: 'User registered successfully', token })
   } catch (error) {
     console.log(error)
