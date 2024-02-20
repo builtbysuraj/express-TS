@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "start": "tsc && node dist/index.js",
+    "build" : "npm i",
     "check-format": "prettier --check ./src",
     "check-types": "tsc --pretty --noEmit",
     "format": "prettier --write ./src"
