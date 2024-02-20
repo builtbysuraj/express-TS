@@ -4,7 +4,7 @@ import connect from '../db'
 
 export const verifyToken = async (req, res, next) => {
   await connect()
-  // console.log(req)
+  console.log(req)
   const token = req.cookies.token
 
   if (!token) {

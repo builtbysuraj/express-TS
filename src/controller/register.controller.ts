@@ -31,7 +31,7 @@ export const registerUser = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      // secure: true,
+      secure: true,
       sameSite: 'none',
     })
     return res.json({ message: 'User registered successfully', token })
