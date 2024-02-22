@@ -3,7 +3,12 @@ import connect from '../db'
 export const logout = async (req, res) => {
   try {
     await connect()
-    res.cookie('token', '', { maxAge: 0 })
+    res.cookie('token', '', {
+      maxAge: 0,
+      httpOnly: true,
+      secure: true,
+      sameSite: 'none',
+    })
     return res.json({
       message: 'Logout successfully',
       success: true,
