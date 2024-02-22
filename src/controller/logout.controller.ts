@@ -1,6 +1,6 @@
 // import connect from '../db'
 
-export const logout = async (req, res) => {
+export const logout = (req, res) => {
   try {
     // await connect()
 
@@ -8,7 +8,7 @@ export const logout = async (req, res) => {
       maxAge: 0,
       httpOnly: true,
       secure: true,
-      // sameSite: 'none',
+      sameSite: 'none',
     })
     return res.json({
       message: 'Logout successfully',
