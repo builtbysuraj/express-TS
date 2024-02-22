@@ -21,7 +21,7 @@ export const registerUser = async (req, res) => {
 
     const tokenData = {
       id: savedUser._id,
-      name: savedUser.name,
+      // name: savedUser.name,
     }
 
     // Create token with JWT
@@ -32,7 +32,7 @@ export const registerUser = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       secure: true,
-      sameSite: 'none',
+      // sameSite: 'none',
     })
     return res.json({ message: 'User registered successfully', token })
   } catch (error) {
