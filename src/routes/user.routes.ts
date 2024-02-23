@@ -10,8 +10,10 @@ const router = Router()
 
 router.route('/register').post(registerUser)
 router.route('/login').post(loginUser)
+router.route('/logout').get(logout)
+
+// Secure Routes
 router.route('/new-task').post(verifyToken, newTask)
 router.route('/tasks').get(verifyToken, tasks)
-router.route('/logout').get(logout)
 
 export default router
