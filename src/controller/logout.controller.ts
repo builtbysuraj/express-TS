@@ -6,9 +6,9 @@ export const logout = (req, res) => {
 
     res.cookie('token', '', {
       maxAge: 0,
-      httpOnly: true,
-      secure: true,
-      sameSite: 'none',
+      // httpOnly: true,
+      // secure: true,
+      // sameSite: 'none',
     })
     return res.json({
       message: 'Logout successfully',
