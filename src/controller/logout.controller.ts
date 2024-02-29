@@ -12,6 +12,7 @@ export const logout = (req, res) => {
       // httpOnly: true,
       // secure: true,
       maxAge: 0,
+      sameSite: 'none'
       // expires: new Date(0),
     })
     return res.json({
