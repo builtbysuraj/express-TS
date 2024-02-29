@@ -30,10 +30,10 @@ export const registerUser = async (req, res) => {
     })
 
     res.cookie('token', token, {
-      httpOnly: true,
-      secure: false,
-      // maxAge: 24 * 60 * 60 * 1000, // Expires in 1 day
-      expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+      // httpOnly: true,
+      // secure: false,
+      maxAge: 24 * 60 * 60 * 1000, // Expires in 1 day
+      // expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
     })
     return res.json({ message: 'User registered successfully', token })
   } catch (error) {
