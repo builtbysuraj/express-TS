@@ -34,7 +34,7 @@ export const loginUser = async (req, res) => {
       // httpOnly: true,
       secure: true,
       sameSite: 'none',
-      // maxAge: 24 * 60 * 60 * 1000, // Expires in 1 day
+      maxAge: 24 * 60 * 60 * 1000, // Expires in 1 day
       // expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
     })
     return res.json({
