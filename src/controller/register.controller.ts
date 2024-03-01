@@ -5,7 +5,7 @@ import { User } from '../model/user.modal'
 
 export const registerUser = async (req, res) => {
   try {
-    await connect()
+    // await connect()
     const { name, pass } = req.body
     // console.log(name, pass)
 

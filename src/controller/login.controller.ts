@@ -6,7 +6,7 @@ import { User } from '../model/user.modal'
 
 export const loginUser = async (req, res) => {
   try {
-    await connect()
+    // await connect()
     const { name, pass } = req.body
 
     const user = await User.findOne({ name })

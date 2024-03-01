@@ -4,7 +4,7 @@ import { User } from '../model/user.modal'
 
 export const tasks = async (req, res) => {
   try {
-    await connect()
+    // await connect()
     // req.user now contains the user's information from the token
     const userId = req.user.id
 
